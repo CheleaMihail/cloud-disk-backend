@@ -1,12 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import config from "config";
+import cors from "cors";
 import fileUpload from "express-fileupload";
 
 import authRouter from "./routes/auth.routes.js";
 import fileRouter from "./routes/file.routes.js";
 import { filePath } from "./middleware/filePath.middleware.js";
-import { corsMiddleware } from "./middleware/cors.middleware.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -17,7 +17,7 @@ const PORT = process.env.PORT || config.get("serverPort");
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(corsMiddleware);
+app.use(cors());
 app.use(fileUpload({}));
 app.use(filePath(path.resolve(__dirname, "files")));
 app.use(express.json());

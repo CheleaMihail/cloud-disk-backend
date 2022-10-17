@@ -16,6 +16,6 @@ export const authMiddleware = (req, res, next) => {
     next();
   } catch (error) {
     console.log(error);
-    res.send({ message: "Server error" });
+    res.send(error);
   }
 };
