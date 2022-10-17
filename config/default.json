@@ -1,0 +1,7 @@
+{
+    "serverPort":5000,
+    "dbUrl":"mongodb+srv://User:User123@cloud.ysx485o.mongodb.net/cloud?retryWrites=true&w=majority",
+    "secretKey":"boolean",
+    "filePath":"C:\\Users\\mikes\\OneDrive\\Desktop\\Code\\React\\mern-cloud-disk\\server\\files",
+    "staticPath":"C:\\Users\\mikes\\OneDrive\\Desktop\\Code\\React\\mern-cloud-disk\\server\\static"
+}
