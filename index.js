@@ -7,18 +7,14 @@ import fileUpload from "express-fileupload";
 import authRouter from "./routes/auth.routes.js";
 import fileRouter from "./routes/file.routes.js";
 import { filePath } from "./middleware/filePath.middleware.js";
+import { corsMiddleware } from "./middleware/cors.middleware.js";
 
 const app = express();
 const path = require("path");
-const corsOptions = {
-  origin: "*",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
 
 const PORT = process.env.PORT || config.get("serverPort");
 
-app.use(cors(corsOptions));
+app.use(corsMiddleware);
 app.use(fileUpload({}));
 app.use(filePath(path.resolve(__dirname, "files")));
 app.use(express.json());
