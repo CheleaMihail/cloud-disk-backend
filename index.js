@@ -7,14 +7,12 @@ import fileUpload from "express-fileupload";
 import authRouter from "./routes/auth.routes.js";
 import fileRouter from "./routes/file.routes.js";
 import { filePath } from "./middleware/filePath.middleware.js";
-import path from "path";
 import { fileURLToPath } from "url";
 
 const app = express();
+const path = require("path");
 
 const PORT = process.env.PORT || config.get("serverPort");
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 app.use(cors());
 app.use(fileUpload({}));
