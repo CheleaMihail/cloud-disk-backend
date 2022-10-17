@@ -14,7 +14,7 @@ const path = require("path");
 
 const PORT = process.env.PORT || config.get("serverPort");
 
-app.use(corsMiddleware);
+app.use(corsMiddleware());
 app.use(fileUpload({}));
 app.use(filePath(path.resolve(__dirname, "files")));
 app.use(express.json());
